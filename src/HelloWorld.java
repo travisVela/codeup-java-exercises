@@ -3,7 +3,7 @@ public class HelloWorld {
         System.out.println("Hello, World!");
 
         int myFavoriteNumber = 7;
-        System.out.println("My favoritenumberis " + myFavoriteNumber);
+        System.out.println("My favorite number is " + myFavoriteNumber);
 
         String myString = "This is my string.";
         System.out.println(myString);
@@ -23,7 +23,7 @@ public class HelloWorld {
         int y = 2;
         x /=  y;
         y -= x;
-        System.out.println(x);
-        System.out.println(y);
+        System.out.println("x = " + x);
+        System.out.println("y = " + y);
     }
 }
