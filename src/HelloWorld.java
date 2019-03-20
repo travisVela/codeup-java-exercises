@@ -1,29 +1,21 @@
+import java.util.Scanner;
+
 public class HelloWorld {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+//        ®
 
-        int myFavoriteNumber = 7;
-        System.out.println("My favorite number is " + myFavoriteNumber);
+        Scanner scanner = new Scanner(System.in);
 
-        String myString = "This is my string.";
-        System.out.println(myString);
+        System.out.println();
+        System.out.println();
+        System.out.print("What is your name? ");
+        String name = scanner.nextLine();
+        System.out.print("What is your favorite color? ");
+        String favColor = scanner.nextLine();
+        System.out.print("What is your favorite number? ");
+        int favNumber = scanner.nextInt();
 
-        float myNumber = 3.14f;
-        System.out.println("My floating integer is " + myNumber);
+        System.out.format("Hello, %s. Your favorite color is %s. Your favorite number is %d", name, favColor, favNumber);
 
-//        int x = 4;
-//        x += 5;
-//
-//        int x = 3;
-//
-//        int y = 4;
-//        y *= x;
-
-        int x = 10;
-        int y = 2;
-        x /=  y;
-        y -= x;
-        System.out.println("x = " + x);
-        System.out.println("y = " + y);
     }
 }
