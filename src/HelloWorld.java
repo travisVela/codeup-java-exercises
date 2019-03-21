@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class HelloWorld {
     public static void main(String[] args) {
-//        ®
 
         Scanner scanner = new Scanner(System.in);
 
@@ -16,6 +15,8 @@ public class HelloWorld {
         int favNumber = scanner.nextInt();
 
         System.out.format("Hello, %s. Your favorite color is %s. Your favorite number is %d", name, favColor, favNumber);
+
+
 
     }
 }
