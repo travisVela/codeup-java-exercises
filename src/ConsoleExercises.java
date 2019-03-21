@@ -7,6 +7,7 @@ public class ConsoleExercises {
 //        System.out.println();
 //
         Scanner scanner = new Scanner(System.in);
+
 //        System.out.print("Enter an integer. ");
 //        int userNum = scanner.nextInt();
 //        System.out.format("The integer is %d", userNum);
