@@ -21,8 +21,9 @@ public class ControlFlowExercises {
             }
             System.out.println();
             scanner.nextLine();
-            System.out.println("Would you like to continue? [y/n]");
 
+            //continue?
+            System.out.println("Would you like to continue? [y/n]");
             if (scanner.nextLine().equals("n")) {
                 break;
             }
