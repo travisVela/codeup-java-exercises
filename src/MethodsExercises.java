@@ -10,6 +10,7 @@ public class MethodsExercises {
         System.out.println("123 % 55 = " + modulus(123, 55));
         getInteger(1, 10);
         numberFactorial(1, 10);
+        rollDice(1, 2);
     }
 
     public static int addition(int arg1, int arg2) {
@@ -59,6 +60,31 @@ public class MethodsExercises {
             return fact;
         }
         return fact;
+    }
+
+    public static int rollDice(int die1, int die2) {
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("Roll the dice!\nEnter the number of sides for a pair of dice?");
+            int sides = scanner.nextInt();
+            int random1 = (int) (Math.random() * sides) + 1;
+            int random2 = (int) (Math.random() * sides) + 1;
+            System.out.println();
+            System.out.printf("<-----   NICE!!   ----->\nYou rolled a %d and a %d%n",random1, random2);
+            System.out.println();
+            scanner.nextLine();
+            System.out.println("Roll again? [y/n]");
+
+            if (scanner.nextLine().equals("n")) {
+                break;
+            } else {
+                System.out.println();
+                rollDice(1, 2);
+
+            }
+            return random1 + random2;
+        }
+        return 1;
     }
 
 }
