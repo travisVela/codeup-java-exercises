@@ -62,29 +62,39 @@ public class MethodsExercises {
         return fact;
     }
 
-    public static int rollDice(int die1, int die2) {
+    public static void rollDice(int die1, int die2) {
         Scanner scanner = new Scanner(System.in);
-        while (true) {
-            System.out.println("Roll the dice!\nEnter the number of sides for a pair of dice?");
-            int sides = scanner.nextInt();
-            int random1 = (int) (Math.random() * sides) + 1;
-            int random2 = (int) (Math.random() * sides) + 1;
-            System.out.println();
-            System.out.printf("<-----   NICE!!   ----->\nYou rolled a %d and a %d%n",random1, random2);
-            System.out.println();
-            scanner.nextLine();
-            System.out.println("Roll again? [y/n]");
+        System.out.println("===============");
+        System.out.println();
+        System.out.println("Roll the dice!!");
+        System.out.println();
+        System.out.println("===============");
 
-            if (scanner.nextLine().equals("n")) {
-                break;
-            } else {
-                System.out.println();
-                rollDice(1, 2);
-
-            }
-            return random1 + random2;
+        System.out.print("Do you want to play? [y/n]  ");
+        if (scanner.next().equals("y")) {
+            diceRoll(1, 2);
+        } else {
+            System.out.println("Peace!!");
         }
-        return 1;
     }
 
+    private static void diceRoll(int die1, int die2) {
+       Scanner scanner = new Scanner(System.in);
+       do {
+           System.out.print("Enter number of sides for a pair of dice.  ");
+           int sides = scanner.nextInt();
+           die1 = (int) (Math.random() * sides) + 1;
+           die2 = (int) (Math.random() * sides) + 1;
+           System.out.println();
+           System.out.printf("<-----   Nice!!   ----->%nYou rolled a %d and a %d%n", die1, die2);
+           System.out.println();
+           System.out.print("Play again? [y/n] ");
+           if (scanner.next().equals("n")) {
+               System.out.println("Thanks for playing!");
+               break;
+           } else {
+               diceRoll(1, 2);
+           }
+       } while (scanner.nextLine().equals("y"));
+    }
 }
