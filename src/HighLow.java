@@ -47,7 +47,7 @@ public class HighLow {
             // compare guess to random number
 
             if (guess == randomNumber) {
-                System.out.println("\n\n You guessed it!!");
+                System.out.println("\n\nYou guessed it!!");
                 System.out.println("================\n");
                 System.out.println("Do you want to try again? [y/n] ");
                 if(scanner.next().equals("n")) {
