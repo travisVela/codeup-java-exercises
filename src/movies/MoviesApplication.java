@@ -3,8 +3,6 @@ import util.Input;
 
 import java.util.Arrays;
 
-import static movies.MoviesArray.findAll;
-
 public class MoviesApplication {
     public static void main(String[] args) {
         Input in = new Input();
@@ -23,70 +21,58 @@ public class MoviesApplication {
 
             System.out.print("Enter your choice -> ");
             int selection = in.getInt();
+            System.out.println();
 
-            // grab all movies
+
             if (selection == 1) {
+                System.out.printf("//////////////\n/ ALL MOVIES /\n//////////////\n");
                 for (Movie movie : MoviesArray.findAll()) {
                     System.out.println(movie.getName());
                 }
-            }
-
-
-            //grab animated movies
-            if (selection == 2) {
+            } else if (selection == 2) {
+                System.out.println("////////////\n/ ANIMATED /\n////////////\n");
                 for (Movie movie : MoviesArray.findAll()) {
                     if (movie.getCategory().equals("animated")) {
                         System.out.println(movie.getName());
                     }
                 }
-            }
-
-            //grab dramas
-            if (selection == 3) {
+            } else if (selection == 3) {
+                System.out.println("/////////\n/ DRAMA /\n/////////\n");
                 for (Movie movie : MoviesArray.findAll()) {
                     if (movie.getCategory().equals("drama")) {
                         System.out.println(movie.getName());
                     }
                 }
-            }
-
-            //grab horror flicks
-            if (selection == 4) {
+            } else if (selection == 4) {
+                System.out.println("//////////\n/ HORROR /\n//////////\n");
                 for (Movie movie : MoviesArray.findAll()) {
                     if (movie.getCategory().equals("horror")) {
                         System.out.println(movie.getName());
                     }
                 }
-            }
-
-            //grab sci-fi movies
-            if (selection == 5) {
+            } else if (selection == 5) {
+                System.out.println("//////////\n/ SCI-FI /\n//////////\n");
                 for (Movie movie : MoviesArray.findAll()) {
                     if (movie.getCategory().equals("scifi")) {
                         System.out.println(movie.getName());
                     }
                 }
-            }
-
-            //grab comedies
-            if (selection == 6) {
+            } else if (selection == 6) {
+                System.out.println("//////////\n/ COMEDY /\n//////////\n");
                 for (Movie movie : MoviesArray.findAll()) {
                     if (movie.getCategory().equals("comedy")) {
                         System.out.println(movie.getName());
                     }
                 }
-            }
-
-            //grab musicals
-            if (selection == 7) {
+            } else if (selection == 7) {
+                System.out.println("///////////\n/ MUSICAL /\n///////////\n");
                 for (Movie movie : MoviesArray.findAll()) {
                     if (movie.getCategory().equals("musical")) {
                         System.out.println(movie.getName());
                     }
                 }
-            }
-            if (selection == 0) {
-                System.out.println("\nPEACE OUT!!\n");
+            } else if (selection == 0) {
+                System.out.println("\n///////////////\n/             /\n/ PEACE OUT!! /\n/             /\n///////////////\n");
                 break;
             }
         } while (true);
