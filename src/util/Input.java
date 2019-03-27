@@ -2,20 +2,20 @@ package util;
 import java.util.Scanner;
 
 public class Input {
-    private Scanner scanner;
+    private static Scanner scanner;
 
     public Input() {
-        scanner = new Scanner(System.in);
+        this.scanner = new Scanner(System.in);
     }
 
     public String getString(){
-        String string =  scanner.nextLine();
-        return string;
+        return scanner.nextLine();
     }
 
-    public boolean yesNo() {
-        System.out.println("Enter something");
-        return scanner.next().equals("y");
+    public static boolean yesNo() {
+        System.out.println("Again? [y/n] ");
+        String answer = scanner.next();
+        return (answer.equals("y") || answer.equals("yes"));
     }
 
     public int getInt(int min, int max) {
@@ -26,6 +26,14 @@ public class Input {
         } while (number < min || number > max);
         System.out.println("Great job!!");
         return number;
+    }
+
+    public int getInt() {
+        if (scanner.hasNextInt()) {
+            return scanner.nextInt();
+        }
+        scanner.next();
+        return getInt();
     }
 
     public double getDouble(double min, double max) {
