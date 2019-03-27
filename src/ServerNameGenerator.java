@@ -25,8 +25,9 @@ public class ServerNameGenerator {
                 "rat",
                 "bird"
         };
-        System.out.println(random(nouns));
-
+        System.out.println("Here is your server name:\n" + random(adjectives) + "-" + random(nouns)+ "\n");
+        System.out.println("Here is your server name:\n" + random(adjectives) + "-" + random(nouns)+ "\n");
+        System.out.println("Here is your server name:\n" + random(adjectives) + "-" + random(nouns)+ "\n");
     }
 
     public static String random(String[] array) {
