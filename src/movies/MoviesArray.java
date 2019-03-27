@@ -105,4 +105,5 @@ public class MoviesArray {
             new Movie("Yankee Doodle Dandy", "musical")
         };
     }
+
 }
