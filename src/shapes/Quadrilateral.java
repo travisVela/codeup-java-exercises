@@ -4,6 +4,7 @@ public abstract class Quadrilateral extends Shape implements Measurable {
     protected double length;
     protected double width;
 
+
     //constructor for length and width
     public Quadrilateral(double length, double width) {
         this.length = length;
@@ -20,8 +21,8 @@ public abstract class Quadrilateral extends Shape implements Measurable {
     }
 
     //setters
-    public abstract void setLength();
+    public abstract void setLength(double length);
 
-    public abstract void setWidth();
+    public abstract void setWidth(double width);
 
 }

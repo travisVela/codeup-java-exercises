@@ -8,14 +8,17 @@ double side;
         this.side = side;
     }
 
-    public void setLength() {
+    @Override
+    public void setLength(double length) {
 
     }
 
-    public void setWidth() {
+    @Override
+    public void setWidth(double width) {
 
     }
 
+    //inherit methods from Quadrilateral which is inherited from Measurable
     public double getPerimeter() {
         return this.side * 4;
     }
