@@ -13,9 +13,9 @@ public class Input {
     }
 
     public static boolean yesNo() {
-        System.out.println("Again? [y/n] ");
-        String answer = scanner.next();
-        return (answer.equals("y") || answer.equals("yes"));
+//        System.out.println("Again? [y/n] ");
+        String answer = scanner.nextLine();
+        return (answer.equals("y") || answer.equalsIgnoreCase("yes"));
     }
 
     public int getInt(int min, int max) {
