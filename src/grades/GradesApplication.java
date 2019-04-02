@@ -1,12 +1,14 @@
 package grades;
 
+import util.Input;
+
 import java.util.*;
 
 public class GradesApplication extends Student {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    static Map<String, Student> students;
 
-        Map<String, Student> students = new HashMap<>();
+    private static void init() {
+        students = new HashMap<>();
 
         Student travis = new Student ("travisVela");
         travis.addGrade(90);
@@ -37,21 +39,40 @@ public class GradesApplication extends Student {
 //        System.out.println(mike.getName() + " grade average is " + mike.getGradeAverage(mike.getGrades()));
 //        System.out.println(james.getName() + " grade average is " + james.getGradeAverage(james.getGrades()));
 //        System.out.println(amanda.getName() + " grade average is " + amanda.getGradeAverage(amanda.getGrades()));
-
-
+    }
+    private static void welcome() {
         System.out.print("\nWelcome!!\n\n");
         System.out.print("Here are the gitHub user names of our students:\n\n");
         for (String key : students.keySet()) {
             System.out.print("| " + key + " |" );
         }
-        System.out.println("\n\nWhat student would you like to learn more information on?\n");
-        String answer = sc.nextLine();
-        while (!students.containsKey(answer)) {
-            System.out.println("Sorry, no student found with github username " + answer);
+    }
+    private static void outputStudentRecord(String key) {
+        System.out.printf("Name: %s - Github username: %s%nCurrent Average: %f%n%n", students.get(key).getName(),  key, students.get(key).getGradeAverage());
+    }
+
+    public static void main(String[] args) {
+
+        init();
+        welcome();
+        Input input = new Input();
+        boolean keepGoing = true;
+
+        do {
+            System.out.println("\nWhat student would you like to see more information on?\n");
+            String answer = input.getString();
+            System.out.println(answer);
             if (students.containsKey(answer)) {
-                System.out.printf("Name: %s - Github Username: %s%nCurrent average: %f", );
+                outputStudentRecord(answer);
+            } else {
+                System.out.printf("Sorry, no student found with the github username of \"%s\".", answer);
             }
-        }
+
+            System.out.println("Would you like to see another student?");
+            keepGoing = input.yesNo();
+            System.out.println();
+
+        } while (keepGoing);
 
     }
 
