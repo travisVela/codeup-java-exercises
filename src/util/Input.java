@@ -25,7 +25,7 @@ public class Input {
         try {
             num = Integer.valueOf(input);
         } catch (NumberFormatException e) {
-            System.out.println("Enter an Integer please and thank you!!");
+            System.out.println(e);
             num = getInt();
         }
         return num;
@@ -38,6 +38,7 @@ public class Input {
         try {
             userInt = Integer.valueOf(input);
         } catch (NumberFormatException e) {
+            System.out.println(e);
             return getInt(min, max);
         }
         if (userInt >= min && userInt <= max) {
@@ -52,7 +53,7 @@ public class Input {
         try {
             num = Double.valueOf(input);
         } catch (NumberFormatException e) {
-            System.out.println("Enter a number please and thank you!!");
+            System.out.println(e);
             num = getDouble();
         }
         if (sc.hasNextDouble()) {
@@ -67,10 +68,14 @@ public class Input {
         try {
             userDouble = Double.valueOf(input);
         } catch (NumberFormatException e) {
+            System.out.println(e);
             return getDouble(min, max);
         }
+
         if (userDouble >= min && userDouble <= max) {
             return userDouble;
+        } else if (userDouble < min || userDouble > max) {
+            System.out.println("Out of range");
         }
         return getDouble(min, max);
     }
