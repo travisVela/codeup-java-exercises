@@ -48,7 +48,7 @@ public class GradesApplication extends Student {
         }
     }
     private static void outputStudentRecord(String key) {
-        System.out.printf("Name: %s - Github username: %s%nCurrent Average: %f%n%n", students.get(key).getName(),  key, students.get(key).getGradeAverage());
+        System.out.printf("%nName: %s - Github username: %s%nCurrent Average: %.2f%n%n", students.get(key).getName(),  key, students.get(key).getGradeAverage());
     }
 
     public static void main(String[] args) {
@@ -67,14 +67,11 @@ public class GradesApplication extends Student {
             } else {
                 System.out.printf("Sorry, no student found with the github username of \"%s\".", answer);
             }
-
             System.out.println("Would you like to see another student?");
             keepGoing = input.yesNo();
             System.out.println();
 
         } while (keepGoing);
-
     }
-
 }
 
