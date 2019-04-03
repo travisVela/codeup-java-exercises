@@ -19,4 +19,9 @@ public class Brass extends Instruments {
         trombone.instrumentName();
     }
 
+    @Override
+    public void instrumentSounds() {
+        super.instrumentSounds();
+        System.out.println("bebop");
+    }
 }

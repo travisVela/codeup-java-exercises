@@ -9,4 +9,8 @@ public class Instruments {
         System.out.printf("%s is in the %s category%n", this.name, this.category);
     }
 
+    public void instrumentSounds() {
+        System.out.println("sound and stuff");
+    }
+
 }

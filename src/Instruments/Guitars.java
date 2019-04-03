@@ -19,5 +19,9 @@ public class Guitars extends Instruments {
         stratocaster.instrumentName();
     }
 
-
+    @Override
+    public void instrumentSounds() {
+        super.instrumentSounds();
+        System.out.println("weeping");
+    }
 }
