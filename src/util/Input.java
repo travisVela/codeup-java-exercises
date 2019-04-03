@@ -1,49 +1,79 @@
 package util;
+
 import java.util.Scanner;
 
 public class Input {
-    private static Scanner scanner;
+    private static Scanner sc;
 
     public Input() {
-        this.scanner = new Scanner(System.in);
+        this.sc = new Scanner(System.in);
     }
 
     public String getString(){
-        return scanner.nextLine();
+        return sc.nextLine();
     }
 
     public static boolean yesNo() {
 //        System.out.println("Again? [y/n] ");
-        String answer = scanner.nextLine();
-        return (answer.equals("y") || answer.equalsIgnoreCase("yes"));
-    }
-
-    public int getInt(int min, int max) {
-        int number;
-        do {
-            System.out.println("Enter a number: ");
-            number  = scanner.nextInt();
-        } while (number < min || number > max);
-        System.out.println("Great job!!");
-        return number;
+        String answer = sc.nextLine();
+        return (answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("yes"));
     }
 
     public int getInt() {
-        if (scanner.hasNextInt()) {
-            return scanner.nextInt();
+        String input = sc.nextLine();
+        int num;
+        try {
+            num = Integer.valueOf(input);
+        } catch (NumberFormatException e) {
+            System.out.println("Enter an Integer please and thank you!!");
+            num = getInt();
         }
-        scanner.next();
-        return getInt();
+        return num;
+    }
+
+
+    public int getInt(int min, int max) {
+        Integer userInt;
+        String input = sc.nextLine();
+        try {
+            userInt = Integer.valueOf(input);
+        } catch (NumberFormatException e) {
+            return getInt(min, max);
+        }
+        if (userInt >= min && userInt <= max) {
+            return userInt;
+        }
+        return getInt(min, max);
+    }
+
+    public double getDouble() {
+        String input = sc.nextLine();
+        double num;
+        try {
+            num = Double.valueOf(input);
+        } catch (NumberFormatException e) {
+            System.out.println("Enter a number please and thank you!!");
+            num = getDouble();
+        }
+        if (sc.hasNextDouble()) {
+            return sc.nextDouble();
+        }
+        return num;
     }
 
     public double getDouble(double min, double max) {
-        double number;
-        do {
-            System.out.println("Enter a decimal number. ");
-            number = scanner.nextDouble();
-        } while (number < min || number > max);
-        System.out.println("You're doing it!!");
-        return number;
+        double userDouble;
+        String input = sc.nextLine();
+        try {
+            userDouble = Double.valueOf(input);
+        } catch (NumberFormatException e) {
+            return getDouble(min, max);
+        }
+        if (userDouble >= min && userDouble <= max) {
+            return userDouble;
+        }
+        return getDouble(min, max);
     }
+
 }
 
