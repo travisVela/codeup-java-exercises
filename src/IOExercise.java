@@ -3,10 +3,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-public class IOpractice {
+public class IOExercise {
     public static void main(String[] args) {
         String directory = "data";
         String filename = "foods";
@@ -22,6 +24,11 @@ public class IOpractice {
             if (!Files.exists(dataFile)) {
                 Files.createFile(dataFile);
             }
+//            Files.write(
+//                    Paths.get("data", "foods"),
+//                    Arrays.asList("Hamburger from Frontier Burger"),
+//                    StandardOpenOption.APPEND
+//            );
 
             List<String> foods = new ArrayList<>();
             foods.add("Hamburger from What-a-burger");
